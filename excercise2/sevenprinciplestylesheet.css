@@ -9,6 +9,13 @@ body {
     
 }
 
+body.darkmode{
+
+    background: black;
+    color:white;
+    --accent-color: white;
+}
+
 
 @font-face {
     font-family: "WaveCPCregular";
@@ -25,7 +32,7 @@ body {
     src: url("font/WavesTinySlabCPC-Regular.otf") format("opentype");
 }
 
-/* Headers */
+
 
 .pages{
     padding: 45px;
@@ -81,12 +88,13 @@ a:hover{
     width: fit-content ;
     height: fit-content;
     font-size: 40px;
-    color: black;
+    color: black var(--accent-color)
     display: inline-block;
     text-decoration: none;
     background-color: transparent;
     border:none;
     border-radius:none;
+    
 }
 
 /*body*/
@@ -102,7 +110,7 @@ a:hover{
 .main-heading{
     text-align: center;
     font-family: WaveCPCBlackletter;
-    color: black;
+    
     font-size: 72px;
     
     margin-left: auto; 
@@ -113,7 +121,7 @@ a:hover{
 
 
 p{
-    color: #000;
+    
     text-align: justify;
     font-family: WaveCPCSlab;
     font-size: 24px;
@@ -143,7 +151,7 @@ p{
 
 
 .firstpagetext{
-    color: #000;
+    
     text-align: center;
     font-family: WaveCPCSlab;
     font-size: 24px;
@@ -160,7 +168,7 @@ p{
 h1{
     text-align: center;
     font-family: WaveCPCBlackletter;
-    color: black;
+    
     font-size: 40px;
     
     margin-left: auto; 
@@ -232,6 +240,32 @@ h2{
 }
 
 
+#darkmode{
+    margin: 20px;
+    display: flex;
+    width: 180px;
+    justify-content: center;
+    height:53px;
+    line-height:100px;
+    align-items: center;
+    font-family: WaveCPCBlackletter;
+    text-align:center;
+    background: white;
+    color: black;
+    text-decoration: none;
+    border:2px solid black;
+    border-radius:40px;
+    margin-left: auto; 
+    margin-right: auto;
+    
+}   
+
+#darkmode:hover{
+    color: white;
+    text-decoration: none;
+    border:2px solid black;
+    border-radius:40px;
+    background-color: black;
 
 .back{
     left:20px;

@@ -1,16 +1,25 @@
 ﻿body {
-    display: inline-block;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
 }
 
+
+
 .b1 {
     display: flex;
     align-items: center;
     padding:10px;
+    position:relative;
+    transition: filter 0.5s ease-in-out;
 }
+.b1:hover{
+    filter:blur(10px);
+
+}
+
 
 .circle {
     width: 50px;
@@ -43,34 +52,55 @@
     width: 20px;
     height: 90px;
     
-    
+ 
 }
 
-.b2{
+
+.b2,.b3{
     align-items: center;
-    
+    position:relative;
     padding:10px;
+    transition: all 0.3s ease;
 
 }
-.upD,.downD{
+.upD,.downD,.upD3{
+    opacity: 1;
     border-radius: 0px 40px 40px 0px;
     background-color: black;
     width:60px;
     height:50px;
     margin: 0; 
+    transition:transform 0.5s ease;
+    transition: opacity 0.3s ease;
+
+}
+
+
+.upD:hover{
+    transform: translate(0px, -25px);
+
+}
+.downD:hover{
+    transform: translate(0px, 25px);
 
 }
 
 .upD2,.downD2{
     border: 10px solid black;
     border-radius: 0px 40px 40px 0px;
-    
     width:60px;
     height:50px;
+    transition:border-width 0.5s ease;
     
-
 }
+
+.upD2:hover, .downD2:hover {
+    
+    border-width: 100px;
+}
+
 .circle2{
+    opacity: 1;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -79,21 +109,42 @@
     
 }
 .circle3{
+    opacity: 1;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color:white;
-    transform:translate( 0px, -70px)
+    transform:translate( 0px, -70px);
+    
+    transition: opacity 0.3s ease;
+    
     
 }
 .downD3{
+    opacity: 1;
     border-radius: 0px 40px 40px 0px;
     background-color: black;
     width:60px;
     height:50px;
     margin: 0; 
-    transform:translate( 0px, -30px)
+    transform:translate( 0px, -30px);
+    transition: opacity 0.3s ease;
 }
+
+
+
+.upD3, .downD3, .circle2,.circle3 :hover{
+    opacity: 0;
+}
+    
+
+
+
+
+
+
+
+
 
 .box1{
     width:30px;
@@ -108,3 +159,34 @@
     border: 20px solid black;
     transform:translate(0px,-30px)
 }
+
+.b3:hover{
+    animation-name:moveblur;
+    animation-duration: 3.5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 3;
+    animation-direction: normal;
+    animation-play-state: running;
+    animation-fill-mode: forward
+    ;	
+
+}
+
+@keyframes moveblur {
+    0% {
+        transform: translate(0px, 0px);
+        
+    }
+    50%{
+    transform: translate(20px, 20px);
+    filter: blur(0px);
+    
+    }
+    100% {
+        transform: translate(20px, 20px);
+        filter: blur(40px);
+        border-color: red;
+    }
+}
+
