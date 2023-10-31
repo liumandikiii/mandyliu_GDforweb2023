@@ -1,0 +1,458 @@
+﻿html 
+    {height: 100%;
+    /* This sets the height of the root element to the height of the viewport */
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: black;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(211deg, rgba(202,230,242,1) 0%, rgba(132,134,237,1) 100%);
+    transition: background 1s;
+}
+
+
+.star-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(35deg, rgba(50,41,83,1) 0%, rgba(113,142,223,1) 100%);
+    position: absolute;
+}
+
+
+.sunrise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(35deg, rgba(53,55,135,1) 0%, rgba(223,132,113,1) 100%);
+}
+
+.morning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(35deg, rgba(70,177,176,1) 0%, rgba(224,206,140,1) 100%);
+}
+.noon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(35deg, rgba(255,180,48,1) 0%, rgba(255,244,106,1) 100%);
+}
+.afternoon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(35deg, rgba(27,195,255,1) 0%, rgba(255,215,106,1) 100%);
+}
+
+.sunset {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(35deg, rgba(255,111,111,1) 0%, rgba(255,215,106,1) 100%);
+}
+
+.evening {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(35deg, rgba(133,63,228,1) 0%, rgba(106,187,255,1) 100%);
+}
+
+.main {
+    margin-left: 4rem;
+    transition: margin-left 800ms ease-out;
+    
+}
+
+
+@font-face {
+    font-family: "PT Sans Bold";
+    src: url("PT_Sans/PTSans-Bold.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: "PT Sans Regular";
+    src: url("PT_Sans/PTSans-Regular.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: "PT Sans Narrow Bold";
+    src: url("PT_Sans/PTSansNarrow-Bold.ttf") format("opentype");
+}
+
+
+@font-face {
+    font-family: "PT Sans Narrow Regular";
+    src: url("PT_Sans/PTSansNarrow-Regular.ttf") format("opentype");
+}
+
+
+
+
+.navbar {
+    background: rgba(255, 255, 255, 0.5);
+    width: 4rem;
+    height: 100%;
+    position: fixed;
+    transition: 800ms ease-out;
+    padding: 20px;
+    padding-bottom: 10px;
+    backdrop-filter: blur(5px);
+}
+
+/*-----------searchbar */
+
+.search {
+    background-color: white;
+    transition: 0.8s ease-out;
+    border-radius: 25px;
+    margin: 0px;
+    padding: 8px;
+    width: 40px;
+    opacity: 80%;
+    height: 40px;
+    border: 2px solid #FFFFFF;
+}
+
+.search-text {
+    border: none;
+    background: none;
+    outline: none;
+    font-family: PT Sans Regular;
+    color: white;
+    opacity: 1;
+    transition: 0.4s ease;
+    line-height: 20px;
+    display: none;
+}
+
+.search-icon {
+    display: inline-block;
+    float: right;
+    color: red;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*-----------searchbar */
+
+/*-----------blocks */
+
+.blocks {
+}
+
+.link-block1, .link-block2, .link-block3 {
+    position: relative;
+    max-width: 100%;
+    margin: 0px;
+    margin-top: 20px;
+    background: blue;
+    color: white;
+    padding: 5px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    flex-grow: 1; /* allows the item to grow */
+    flex-shrink: 0;
+    aspect-ratio: 10/5;
+    max-height: 150px;
+    min-height: 100px;
+    
+    transition: 0.8s ease-out;
+}
+
+.link-block1 {
+   
+    background: linear-gradient(211deg, rgba(255,213,58,1) 0%, rgba(79,180,255,1) 100%);
+}
+
+.link-block2 {
+    background: linear-gradient(211deg, rgba(202,230,242,1) 0%, rgba(132,134,237,1) 100%);
+}
+
+.link-block3 {
+    background: linear-gradient(211deg, rgba(157,146,161,1) 0%, rgba(35,39,61,1) 100%);
+}
+
+.link-block1, .link-block2, .link-block3 {
+    border: 0px solid #FFFFFF;
+}
+
+    .link-block1::before, .link-block2::before, .link-block3::before {
+        content: "";
+        position: absolute;
+        top: -2px; /* This value may need to be adjusted depending on the blur amount */
+        right: -2px; /* This value may need to be adjusted depending on the blur amount */
+        bottom: -2px; /* This value may need to be adjusted depending on the blur amount */
+        left: -2px; /* This value may need to be adjusted depending on the blur amount */
+        background: inherit; /* This makes the pseudo-element the same background color as the parent */
+        z-index: -1; /* Puts the blurred pseudo-element behind the content of the parent element */
+        border-radius: inherit; /* If your original element has rounded corners, the pseudo-element should inherit these too */
+    }
+
+/*text in blocks*/
+
+
+
+.block-city {
+    color: #FFF;
+    font-family: PT Sans Regular;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 5px;
+    margin-left: 10px;
+    opacity: 0;
+}
+
+.block-weather {
+    color: #FFF;
+    font-family: PT Sans Regular;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute; /* Positioned absolutely regarding its parent */
+    bottom: -17px; /* 10px from the bottom of its parent */
+    left: 10px; /* Optional: if you want it also 10px from the left */
+    text-transform: capitalize;
+    opacity: 0;
+    font-style: italic;
+}
+
+.block-time {
+    color: #FFF;
+    font-family: PT Sans Regular;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+    margin-left: 10px;
+    opacity: 0;
+}
+
+.block-degree {
+    position: absolute;
+    right: 20px;
+    bottom: -70px;
+    color: #FFF;
+    font-family: PT Sans Narrow Regular;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0;
+}
+
+.degree-symbol {
+    right: 5px;
+    position: absolute;
+    font-size: 40px;
+    vertical-align: super;
+    transform: translateX(10px);
+    opacity: 0;
+}
+
+.block-city,
+.block-weather,
+.block-time,
+.block-degree,
+.degree-symbol {
+    /* ... other styles ... */
+    opacity: 0;
+    /* Apply transitions when entering the hover state, not when leaving */
+    transition: opacity 0.2s; /* No transition when the hover state ends */
+}
+
+
+
+/*-----------blocks */
+
+.navbar:hover {
+    width: 25%;
+}
+
+    .navbar:hover .block-city,
+    .navbar:hover .block-weather,
+    .navbar:hover .block-time,
+    .navbar:hover .block-degree,
+    .navbar:hover .degree-symbol {
+        opacity: 1;
+        transition: opacity 0.8s ease-out; /* Transition effect when entering the hover state */
+        transition-delay: 1s;
+    }
+
+    .navbar:hover .blocks {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .navbar:hover .search-text {
+        display: inline-block;
+        width: 70%;
+    }
+
+    .navbar:hover .search {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+
+    .navbar:hover + .main {
+        margin-left: 25%; /* Adjusted value for the sake of example, you might want to change it */
+        transform: translateX(0px); /* Zero because you already used margin-left to move the content */
+    }
+
+.current-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    color: #FFF;
+    text-align: right;
+    font-family: PT Sans Regular;
+    font-size: 22px;
+    line-height: 18px;
+    font-style: normal;
+    font-weight: 400;
+    opacity:0.6;
+    transition:0.8s ease-out;
+}
+
+
+/*-----------stats */
+
+.stats-bar {
+    position: absolute;
+    right: 1rem;
+    top: 4rem;
+    opacity:0.8;
+    transition: 0.8s ease-out;
+}
+
+.stats {
+    color: #FFF;
+    text-align: right;
+    font-family: PT Sans Regular;
+    font-size: 18px;
+    line-height: 18px;
+    font-style: normal;
+    font-weight: 400;
+    opacity: 0.8;
+    transition:  0.8s ease-out;
+}
+
+    .stats:hover {
+        text-shadow: none;
+    }
+
+
+/*-----------today weather */
+
+.today {
+    display: inline-block;
+    margin-left: 5rem;
+    width: 40%;
+    height: 50%;
+}
+
+.inline-container {
+    display: flex;
+    align-items: center; /* This will vertically align the items in the middle */
+    color: #FFF;
+    font-family: PT Sans Regular;
+}
+
+.icon {
+    position: absolute;
+    bottom: 20px;
+    transform: translateX(-40px);
+}
+
+
+.temp {
+    font-size: 20vw;
+    color: #FFF;
+    font-family: PT Sans Narrow Regular;
+    opacity: 0.8;
+    transition: 0.8s ease-out;
+}
+
+    .temp:hover {
+        opacity: 1;
+    }
+
+
+
+.degree-symbol-today {
+    font-size: 10vw;
+    vertical-align: super;
+    transform: translateX(10px);
+}
+
+.details {
+    margin: 20px;
+    margin-top: -40px
+}
+
+.description {
+    text-transform: capitalize;
+    font-size: 2.5vw;
+    font-style: italic;
+    opacity: 0.6;
+    transition: 0.8s ease-out;
+}
+
+    .description:hover {
+        opacity: 1;
+    }
+
+
+.inline-container2 {
+    color: #FFF;
+    font-size: 2vw;
+    font-family: PT Sans Regular;
+    opacity: 0.6;
+    transition: 0.8s ease-out;
+}
+
+    .inline-container2:hover {
+        opacity:1;
+    }
+
+.link-block1:hover, .link-block2:hover, .link-block3:hover {
+    text-shadow: none; /* Remove text-shadow when hovering */
+}
